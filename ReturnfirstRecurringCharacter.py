@@ -7,7 +7,7 @@
 import sys
 
 
-def recur_charac(string):
+def recur_charac_set(string):
     count = set()
     for s in string:
         if s in count:
@@ -15,6 +15,17 @@ def recur_charac(string):
             return s
         else:
             count.add(s)
+    return None
+
+def recur_charac_dict(string):
+    count = {}
+    for s in string:
+        if s in count:
+            #count[s] += 1
+            return s
+        else:
+            count[s] = 1
+    return None
 
 if __name__ == '__main__':
-    recur_charac(string=sys.argv[1])
+    print(recur_charac_dict(string=sys.argv[1]))
